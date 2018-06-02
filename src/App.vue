@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <v-header :header-data="seller"></v-header>
     <div class="tab border-1px">
 			<div class="tab-item">
 				<router-link to='/goods'>商品</router-link>
@@ -53,36 +53,21 @@ export default {
 }
 </script>
 
-<style>
-	.tab{
-		display: flex;
-		width: 100%;
-		line-height: 40px;
-		height: 40px;
-		position: relative;
-		overflow: hidden;
-	}
-	.tab::after{
-		display: block;
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		border-top: 1px solid rgba(7,17,27,0.1);
-		content: " ";
-	}
-	.tab .tab-item{
-		/* width: 33.3%; */
-		flex: 1;
-		text-align: center;
-	}
-	.tab .tab-item>a{
-		font-size: 14px;
-		color: #4d555d;
-		display: block;
-	}
-	.tab .tab-item>a.router-link-active{
-		color: #f01414;
-	}
-	
+<style lang="stylus" scope>
+@import "./common/stylus/mixin.styl"
+  .tab
+    display: flex
+    width: 100%
+    height: 40px
+    line-height: 40px
+    border-1px(rgba(7,17,27,0.1))
+    .tab-item
+      flex: 1
+      text-align: center
+      & > a
+        display: block
+        font-size: 14px
+        color: rgb(77,85,93)
+        &.router-link-active
+          color: rgb(240,20,20)
 </style>

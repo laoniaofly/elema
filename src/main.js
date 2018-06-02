@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import store from './store'
+import './common/stylus/index.styl'
 
 Vue.prototype.$http = axios;
 
